@@ -13,15 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('report_journeys', function (Blueprint $table) {
+        Schema::create('app_users', function (Blueprint $table) {
             $table->id();
-            $table->string("app_user_id");
-            $table->string("message");
-            $table->string("email_id");
-            $table->string("app_user_name");
-            $table->string("journey_image_attachment");
-            $table->string("start_location");
-            $table->string("destination_location");
+            $table->string('name');
+            $table->string('email');
+            $table->string('telephone');
+            $table->string('avatar');
+            $table->string('latitude');
+            $table->string('longitude');
+            $table->string('gender');
+            $table->string('age');
             $table->timestamps();
         });
     }
@@ -33,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('report_journeys');
+        Schema::dropIfExists('app_users');
     }
 };

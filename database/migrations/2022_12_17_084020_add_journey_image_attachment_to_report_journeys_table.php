@@ -13,8 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('emails', function (Blueprint $table) {
-            $table->string('image_attachment')->before('city_name')->nullable();
+        Schema::table('report_journeys', function (Blueprint $table) {
+            $table->string('journey_image_attachment')->before('start_location')->nullable();
         });
     }
 
@@ -25,8 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('emails', function (Blueprint $table) {
-            $table->dropColumn('image_attachment');
+        Schema::table('report_journeys', function (Blueprint $table) {
+            $table->dropColumn('journey_image_attachment');
         });
     }
 };
